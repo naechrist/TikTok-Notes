@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tik_tok.description %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @tik_tok.link %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @tik_tok.user_id %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @tik_tok.category_id %>
+</p>
+
+<p>
+  <strong>Favorite:</strong>
+  <%= @tik_tok.favorite %>
+</p>
+
+<%= link_to 'Edit', edit_tik_tok_path(@tik_tok) %> |
+<%= link_to 'Back', tik_toks_path %>

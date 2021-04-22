@@ -1,0 +1,2 @@
+class TikTok < ApplicationRecord
+end
