@@ -16,7 +16,7 @@ POST /login
 GET /categories/new
 -show a form to add a category
 
-POST /categorys
+POST /categoriess
 -take the data and save it to the database
 
 GET /categories
