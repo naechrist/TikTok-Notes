@@ -1,5 +1,5 @@
 class TikTok < ApplicationRecord
-    belongs_to :user
+    belongs_to :user, optional: true
     belongs_to :category
 
     validates :description, presence: true

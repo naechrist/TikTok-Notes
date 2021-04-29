@@ -25,10 +25,10 @@ class TikToksController < ApplicationController
 
     respond_to do |format|
       if @tik_tok.save
-        format.html { redirect_to @tik_tok, notice: "Tik tok was successfully created." }
+        format.html { redirect_to @tik_tok, notice: "Video was successfully added." }
         format.json { render :show, status: :created, location: @tik_tok }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new }
         format.json { render json: @tik_tok.errors, status: :unprocessable_entity }
       end
     end
@@ -38,7 +38,7 @@ class TikToksController < ApplicationController
   def update
     respond_to do |format|
       if @tik_tok.update(tik_tok_params)
-        format.html { redirect_to @tik_tok, notice: "Tik tok was successfully updated." }
+        format.html { redirect_to @tik_tok, notice: "Video was successfully updated." }
         format.json { render :show, status: :ok, location: @tik_tok }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class TikToksController < ApplicationController
   def destroy
     @tik_tok.destroy
     respond_to do |format|
-      format.html { redirect_to tik_toks_url, notice: "Tik tok was successfully destroyed." }
+      format.html { redirect_to tik_toks_url, notice: "Video was successfully destroyed." }
       format.json { head :no_content }
     end
   end

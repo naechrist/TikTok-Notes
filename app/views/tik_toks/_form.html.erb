@@ -11,6 +11,13 @@
     </div>
   <% end %>
 
+   <p> Select the category: </p>
+    <div>
+        <%= form.collection_select :category_id, Category.all.alpha, :id, :name, include_blank: "" %>
+    </div>
+    <p> If category not listed, click <%= link_to "here", new_category_url %> to add. </p>
+<br><br><br>
+
   <div class="field">
     <%= form.label :description, "About" %>
     <%= form.text_area :description %>
@@ -21,11 +28,8 @@
     <%= form.text_field :link %>
   </div>
 
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all.alpha, :id, :name  %>
-  </div>
-
+ 
+<br>
   <div class="field">
     <%= form.label :favorite, "Check box to add to your Favorites" %>
     <%= form.check_box :favorite %>
