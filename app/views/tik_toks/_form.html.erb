@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :description, "About" %>
     <%= form.text_area :description %>
   </div>
 
   <div class="field">
-    <%= form.label :link %>
+    <%= form.label :link, "Video Link" %>
     <%= form.text_field :link %>
   </div>
 
@@ -27,11 +27,12 @@
   </div>
 
   <div class="field">
-    <%= form.label :favorite %>
+    <%= form.label :favorite, "Check box to add to your Favorites" %>
     <%= form.check_box :favorite %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    
+    <%= form.submit "Add Video!" %>
   </div>
 <% end %>
