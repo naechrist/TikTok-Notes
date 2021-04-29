@@ -1,15 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
   <%= @category.name %>
 </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @category.image_url %>
-</p>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
-<%= link_to 'Destroy', category_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Edit Category Name', edit_category_path(@category) %> |
+<%= link_to 'All Categories', categories_path %> |
+<%= link_to 'Delete Category', category_path, method: :delete, data: { confirm: 'Are you sure?' } %>
