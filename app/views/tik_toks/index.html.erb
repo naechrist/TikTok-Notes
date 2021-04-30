@@ -6,17 +6,10 @@
     <% @tik_toks.each do |tik_tok| %>
     
   <figure>
-   <!-- <iframe><%= tik_tok.link %></iframe> -->
-  
-  <% link = tik_tok.link %>
-  <% a = tik_tok.link.split("/")[5].split("?")[0] %>
-  <% b = tik_tok.link.split("/")[-3] %>
-  <% c = tik_tok.link.split("/video")[0] %>
-
-   <!-- tiktok videos -->  <blockquote class="tiktok-embed" cite="<%= link %>" data-video-id="<%= a %>" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="<%= b %>" href="<%= c %>"></a> href="<%= link %>"></a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script> 
-  <!-- youtube videos only --> <iframe width="#{width}" height="#{height}" src="<%= video_embed(tik_tok.link) %>" frameborder="0"></iframe> 
-       <figcaption> <p><%= tik_tok.description %></p></figcaption>
-       </figure>
+    <!-- tiktok videos -->  <blockquote class="tiktok-embed" cite="<%= tik_tok.link %>" data-video-id="<%= tik_tok.link.split("/")[5].split("?")[0] %>" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="<%= tik_tok.link.split("/")[-3] %>" href="<%= tik_tok.link.split("/video")[0] %>"></a> href="<%= tik_tok.link %>"></a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script> 
+    <!-- youtube videos only --> <iframe width="#{width}" height="#{height}" src="<%= video_embed(tik_tok.link) %>" frameborder="0"></iframe> 
+    <figcaption> <p><%= tik_tok.description %></p></figcaption>
+  </figure>
   
        <!-- <p><%= link_to 'Show', tik_tok %></p>
         <p><%= link_to 'Edit', edit_tik_tok_path(tik_tok) %></p>
