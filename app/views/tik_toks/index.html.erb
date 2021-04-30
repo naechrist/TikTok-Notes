@@ -2,34 +2,19 @@
 
 <h1>Tik Toks</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th>Link</th>
-      <th>User</th>
-      <th>Category</th>
-      <th>Favorite</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div id="columns">
     <% @tik_toks.each do |tik_tok| %>
-      <tr>
-        <td><%= tik_tok.description %></td>
-        <td><%= tik_tok.link %></td>
-        <td><%= tik_tok.user_id %></td>
-        <td><%= tik_tok.category_id %></td>
-        <td><%= tik_tok.favorite %></td>
-        <td><%= link_to 'Show', tik_tok %></td>
-        <td><%= link_to 'Edit', edit_tik_tok_path(tik_tok) %></td>
-        <td><%= link_to 'Destroy', tik_tok, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <figure>
+   <p><%= tik_tok.link %></p>
+       <figcaption> <p><%= tik_tok.description %></p></figcaption>
+       </figure>
+  
+       <!-- <p><%= link_to 'Show', tik_tok %></p>
+        <p><%= link_to 'Edit', edit_tik_tok_path(tik_tok) %></p>
+        <p><%= link_to 'Destroy', tik_tok, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    -->
     <% end %>
-  </tbody>
-</table>
-
+</div>
 <br>
 
 <%= link_to 'New Tik Tok', new_tik_tok_path %>
