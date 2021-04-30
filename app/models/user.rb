@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-    # has_many :tik_toks
+    has_many :tik_toks
+    has_many :categories
 
     has_secure_password 
 
