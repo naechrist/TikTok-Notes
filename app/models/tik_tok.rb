@@ -1,5 +1,5 @@
 class TikTok < ApplicationRecord
-  require 'uri'
+  
     belongs_to :user, optional: true
     belongs_to :category
 
@@ -8,4 +8,6 @@ class TikTok < ApplicationRecord
     def self.search(search)
         where("description LIKE ? OR link LIKE ?", "%#{search}%", "%#{search}%") 
       end
+
+   
 end
