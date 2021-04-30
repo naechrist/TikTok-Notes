@@ -5,7 +5,9 @@
 <div id="columns">
     <% @tik_toks.each do |tik_tok| %>
   <figure>
-   <p><%= tik_tok.link %></p>
+   <!-- <iframe><%= tik_tok.link %></iframe> -->
+   <blockquote class="tiktok-embed" cite="<%= tik_tok.link %>" data-video-id="6953749890811858182" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@gabi_livin" href="https://www.tiktok.com/@gabi_livin">@gabi_livin</a> <p>And this is.. Us                  @clickandtap7 </p> <a target="_blank" title="♬ Coming of Age - Blondes" href="<%= tik_tok.link %>">♬ Coming of Age - Blondes</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+   <iframe width="#{width}" height="#{height}" src="<%= video_embed(tik_tok.link) %>" frameborder="0"></iframe>
        <figcaption> <p><%= tik_tok.description %></p></figcaption>
        </figure>
   
