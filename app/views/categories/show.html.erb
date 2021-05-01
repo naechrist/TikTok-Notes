@@ -5,11 +5,13 @@
 </h1>
 
 <% @category.tik_toks.each do |t|  %>
-  <figure>
-    <!-- tiktok videos -->  <blockquote class="tiktok-embed" cite="<%= t.link %>" data-video-id="<%= t.link.split("/")[5].split("?")[0] %>" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="<%= t.link.split("/")[-3] %>" href="<%= t.link.split("/video")[0] %>"></a> href="<%= t.link %>"></a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script> 
-    <!-- youtube videos --> <iframe width="#{width}" height="#{height}" src="<%= video_embed(t.link) %>" frameborder="0"></iframe> 
-    <figcaption> <p><%= t.description %></p></figcaption>
-  </figure>
+  <span id="columns">
+    <figure>
+      <!-- tiktok videos -->  <blockquote class="tiktok-embed" cite="<%= t.link %>" data-video-id="<%= t.link.split("/")[5].split("?")[0] %>" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="<%= t.link.split("/")[-3] %>" href="<%= t.link.split("/video")[0] %>"></a> href="<%= t.link %>"></a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script> 
+      <!-- youtube videos --> <iframe width="#{width}" height="#{height}" src="<%= video_embed(t.link) %>" frameborder="0"></iframe> 
+      <figcaption> <p><%= t.description %></p></figcaption>
+    </figure>
+  </span>
 <% end %>
 
 <%= link_to 'Add New Video', new_tik_tok_url(@category) %> <br><br><br>
