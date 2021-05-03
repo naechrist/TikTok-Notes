@@ -2,21 +2,21 @@
 
 <h1>Tik Toks</h1>
 
+<%= link_to 'New Tik Tok', new_tik_tok_path %> |
+<%= link_to 'Categories', categories_path %> 
+
 <div id="columns">
-    <% @tik_toks.each do |tik_tok| %>
-    
-  <figure>
-    <!-- tiktok videos -->  <blockquote class="tiktok-embed" cite="<%= tik_tok.link %>" data-video-id="<%= tik_tok.link.split("/")[5].split("?")[0] %>" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="<%= tik_tok.link.split("/")[-3] %>" href="<%= tik_tok.link.split("/video")[0] %>"></a> href="<%= tik_tok.link %>"></a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script> 
-    <!-- youtube videos only --> <iframe width="#{width}" height="#{height}" src="<%= video_embed(tik_tok.link) %>" frameborder="0"></iframe> 
-    <figcaption> <p><%= tik_tok.description %></p></figcaption>
-  </figure>
-  
-       <!-- <p><%= link_to 'Show', tik_tok %></p>
-        <p><%= link_to 'Edit', edit_tik_tok_path(tik_tok) %></p>
-        <p><%= link_to 'Destroy', tik_tok, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-    -->
-    <% end %>
+  <% @tik_toks.each do |tik_tok| %>
+    <figure>
+      <!-- tiktok videos -->  <blockquote class="tiktok-embed" cite="<%= tik_tok.link %>" data-video-id="<%= tik_tok.link.split("/")[5].split("?")[0] %>" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="<%= tik_tok.link.split("/")[-3] %>" href="<%= tik_tok.link.split("/video")[0] %>"></a> href="<%= tik_tok.link %>"></a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script> 
+      <!-- youtube videos only <iframe width="#{width}" height="#{height}" src="<%= video_embed(tik_tok.link) %>" frameborder="0"></iframe> -->
+      <figcaption> 
+        <p><%= tik_tok.description %></p>
+        <p><%= link_to "Edit", edit_tik_tok_path(tik_tok) %> | <%= link_to 'Destroy', tik_tok, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </figcaption><br><br>
+    </figure><br><br>
+  <% end %>
 </div>
 <br>
 
-<%= link_to 'New Tik Tok', new_tik_tok_path %>
+
