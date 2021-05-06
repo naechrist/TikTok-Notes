@@ -1,6 +1,7 @@
 class TikToksController < ApplicationController
   before_action :set_tik_tok, only: %i[ show edit update destroy ]
-
+  before_action :log_in_to_edit, only: [:new, :create, :edit, :update, :destroy]
+  
   # GET /tik_toks or /tik_toks.json
   def index
     @tik_toks = TikTok.all
@@ -65,5 +66,11 @@ class TikToksController < ApplicationController
     # Only allow a list of trusted parameters through.
     def tik_tok_params
       params.require(:tik_tok).permit(:description, :link, :user_id, :category_id, :favorite)
+    end
+
+    def log_in_to_edit
+      if !logged_in?
+        redirect_to login_path
+      end
     end
 end

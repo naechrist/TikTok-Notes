@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ show edit update destroy ]
+  before_action :log_in_to_edit, only: [:new, :create, :destroy]
 
   # GET /categories or /categories.json
   def index
@@ -65,5 +66,11 @@ class CategoriesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def category_params
       params.require(:category).permit(:name, :image_url)
+    end
+
+    def log_in_to_edit
+      if !logged_in?
+        redirect_to login_path
+      end 
     end
 end
