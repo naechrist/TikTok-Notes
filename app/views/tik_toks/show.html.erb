@@ -4,20 +4,23 @@
 <%= link_to 'Videos', tik_toks_path %>
 
 <p>
-  <strong>About:</strong>
-  <%= @tik_tok.description %>
-</p>
-
-<p>
-  <strong>Link:</strong>
-  <%= @tik_tok.link %>
-</p>
-
-<p>
   <strong>Category:</strong>
   <%= @tik_tok.category.name %>
 </p>
 
+<div id="show">
+    <figure>
+      <!-- tiktok videos -->  <blockquote class="tiktok-embed" cite="<%= @tik_tok.link %>" data-video-id="<%= @tik_tok.link.split("/")[5].split("?")[0] %>" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="<%= @tik_tok.link.split("/")[-3] %>" href="<%= @tik_tok.link.split("/video")[0] %>"></a> href="<%= @tik_tok.link %>"></a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script> 
+      <figcaption> 
+        <p><%= @tik_tok.description %></p>
 
-<%= link_to 'Edit Video', edit_tik_tok_path(@tik_tok) %> |
+        <%= link_to 'Edit Video', edit_tik_tok_path(@tik_tok) %> |
+        <%= link_to 'Destroy', @tik_tok, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+      </figcaption>
+    </figure>
+</div>
+
+
+
 

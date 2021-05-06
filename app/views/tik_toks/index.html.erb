@@ -12,6 +12,7 @@
       <!-- youtube videos only <iframe width="#{width}" height="#{height}" src="<%= video_embed(tik_tok.link) %>" frameborder="0"></iframe> -->
       <figcaption> 
         <p><%= tik_tok.description %></p>
+        <p><%= tik_tok.category.name %> Category</p>
         <p><%= link_to "Edit", edit_tik_tok_path(tik_tok) %> | <%= link_to 'Destroy', tik_tok, method: :delete, data: { confirm: 'Are you sure?' } %></p>
       </figcaption><br><br>
     </figure><br><br>

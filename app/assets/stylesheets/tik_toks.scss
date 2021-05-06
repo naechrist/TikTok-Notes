@@ -5,7 +5,13 @@ body {
   background: url(//subtlepatterns.com/patterns/scribble_light.png);
   font-family: Calluna, Arial, sans-serif;
   min-height: 1000px;
+  text-align: center;
 }
+
+#show {
+  display: inline-flex;
+}
+
 #columns {
   column-width: 320px;
   column-gap: 15px;
